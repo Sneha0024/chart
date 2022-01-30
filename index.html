@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+</head>
+<body>
+
+    
+   <div id="chart"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        
+        var options = {
+          series: [{
+          name: 'Discharges by interval',
+          type: 'column',
+          data: [0, 1, 16, 11, 5, 2, 0, 0, 0, 0]
+        }, {
+          name: 'Avg Time',
+          type: 'line',
+        //   data: [0, 02, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
+          data: [0, 1, 16, 11, 5, 2, 0, 0, 0, 0]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+        },
+        stroke: {
+          width: [0, 4]
+        },
+        title: {
+          text: 'Discharges Now'
+        },
+        dataLabels: {
+          enabled: true,
+          enabledOnSeries: [1]
+        },
+        labels: ['12AM - 06AM', '06AM - 08AM', '08AM - 10AM', '10AM - 12PM', '12PM - 02PM', '02PM - 04PM', '04PM - 06PM', '06PM - 08PM', '08PM - 10PM', '10PM - 12AM'],
+        xaxis: {
+          type: 'hoursminutes'
+        },
+        yaxis: [{
+          title: {
+            text: '',
+          },
+        
+        }, {
+          opposite: true,
+          title: {
+            text: ''
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+      
+      
+    
+
+
+
+    </script>
+</body>
+</html>
